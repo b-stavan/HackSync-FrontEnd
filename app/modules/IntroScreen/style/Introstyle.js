@@ -18,5 +18,5 @@ export default StyleSheet.create({
     textContainer: {alignItems: 'center', justifyContent: 'center', marginTop: 50},
     textStyle: {textAlign: 'center', padding: 20, fontSize: 35, fontWeight: '900', color : 'black'},
     bigTextContainer: { paddingHorizontal: 25,alignItems: 'center', justifyContent: 'center'},
-    bigTextStyle: {fontSize: 17,fontWeight: '500', color: 'black' }
+    bigTextStyle: {fontSize: 17,fontWeight: '500', color: 'black'}
 });
