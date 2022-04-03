@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import navigationStrings from "../constants/navigationStrings";
-import IntroScreen from "../modules/IntroScreen/IntroScreen";
 import TabRoutes from "./TabRoutes";
 import LoginScreen from "../modules/Login/LoginScreen";
 const MainStack = (Stack) => {
