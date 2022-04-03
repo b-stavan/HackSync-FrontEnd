@@ -6,10 +6,6 @@ const MainStack = (Stack) => {
   return (
     <>
       <Stack.Screen name={navigationStrings.AUTH_STACK} component={AuthStack} />
-      {/* <Stack.Screen
-        name={navigationStrings.LOGIN_SCREEN}
-        component={LoginScreen}
-      /> */}
       {true && (
         <Stack.Screen name={navigationStrings.TABS} component={TabRoutes} />
       )}
