@@ -3,19 +3,33 @@ import React from 'react';
 import {Image} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import navigationStrings from '../constants/navigationStrings';
-import {HomeScreen, Notification, EditProfile} from '../modules/index'
+import {HomeScreen, Notification, EditProfile, HomeScreenTeamLeader, HomeScreenOrg} from '../modules/index'
 import icons from '../assets/icons'
 import { Colors } from '../themes';
 
 const Tab = createBottomTabNavigator();
 
 const TabRoutes = () => {
+  const typeOfUser='TL'
+  let renderComp, renderCompString;
+  if(typeOfUser === 'TM'){
+    renderComp = HomeScreen
+    renderCompString = 'HomeScreen'
+  }
+  if(typeOfUser === 'TL'){
+    renderComp = HomeScreenTeamLeader
+    renderCompString = 'HomeScreenTeamLeader'
+  }
+  if(typeOfUser === 'Org'){
+    renderComp = HomeScreenOrg
+    renderCompString = 'HomeScreenOrg'
+  }
 
     return (
         <Tab.Navigator screenOptions={{headerShown:false,tabBarShowLabel: false,}}>
           <Tab.Screen
-            name={navigationStrings.HOME_SCREEN}
-            component={HomeScreen}
+            name={renderCompString}
+            component={renderComp}
             options={{
               tabBarIcon: ({focused}) =>{
                 return (
