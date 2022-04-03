@@ -48,12 +48,13 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     // backgroundColor: Colors.navyBlue,
-    marginVertical: "30%",
-    marginHorizontal: "10%",
+    marginVertical: "0%",
+    marginHorizontal: "0%",
     flex: 1,
     // borderBottomRightRadius: moderateScale(30),
     // borderTopLeftRadius: moderateScale(30),
     alignItems: "center",
+    justifyContent: "center",
   },
   modalParentContainer: {
     flex: 1,
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   modalDetailsContainer: {
-    flex: 1,
+    // flex: 1,
   },
   modalText: {
     color: "black",
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
   },
   modalButton: {
     height: verticalScale(30),
-    marginTop: verticalScale(15),
+    margin: verticalScale(15),
     borderRadius: moderateScale(10),
     justifyContent: "center",
     alignItems: "center",
