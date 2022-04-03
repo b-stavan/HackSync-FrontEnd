@@ -5,6 +5,7 @@ import Routes from "./app/navigation/Routes";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import reduxStore from "./app/redux/Store";
+import { HomeScreen } from "./app/modules";
 
 const App = () => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const App = () => {
     <Provider store={reduxStore.store}>
       <PersistGate persistor={reduxStore.persistor}>
         <SafeAreaView style={{ flex: 1 }}>
-          <Routes />
+          <HomeScreen />
         </SafeAreaView>
       </PersistGate>
     </Provider>

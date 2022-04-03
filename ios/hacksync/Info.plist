@@ -28,11 +28,9 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>hacksync.com</key>
+			<key>172.16.1.111:8081</key>
 			<dict>
 				<key>NSAllowArbitraryLoads</key>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-      <true/>
 				<true/>
 			</dict>
 		</dict>
