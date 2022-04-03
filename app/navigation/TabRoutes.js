@@ -14,7 +14,7 @@ import { Colors, moderateScale } from "../themes";
 
 const Tab = createBottomTabNavigator();
 
-const TabRoutes = () => {
+const TabRoutes = ({ navigation }) => {
   const typeOfUser = "TL";
   let renderComp, renderCompString;
   if (typeOfUser === "TM") {
@@ -29,7 +29,6 @@ const TabRoutes = () => {
     renderComp = HomeScreenOrg;
     renderCompString = "HomeScreenOrg";
   }
-
   return (
     <Tab.Navigator
       screenOptions={{ headerShown: false, tabBarShowLabel: false }}
