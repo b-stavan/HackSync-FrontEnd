@@ -18,6 +18,7 @@ import { dummyDataForTeamLead, Strings } from "../../constants";
 import ApiConstant from "../../constants/ApiConstant";
 import Actions, { ApiSelectors } from "../../redux/apiRedux";
 import styles from "./HomeScreenStyles";
+import api from "../../services/api";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();

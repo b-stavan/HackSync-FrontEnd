@@ -11,6 +11,10 @@ import {
   View,
 } from "react-native";
 import styles from "./style/OrganizationRegistrationScreenStyle";
+import { useDispatch, useSelector } from "react-redux";
+import ApiConstant from "../../constants/ApiConstant";
+import Actions, { ApiSelectors } from "../../redux/apiRedux";
+import api from "../../services/api";
 
 const FieldContainer = ({
   nameField,
@@ -34,6 +38,7 @@ const FieldContainer = ({
 };
 
 const OrganizationRegistrationScreen = () => {
+  const dispatch = useDispatch();
   const [organizationName, setOrganizationName] = useState("");
   const [hackName, setHackName] = useState("");
   const [hackDate, setHackDate] = useState("");
@@ -42,6 +47,8 @@ const OrganizationRegistrationScreen = () => {
   const [organizationEmail, setOrganizationEmail] = useState("");
   const [password, setPassword] = useState("");
   const [venue, setVenue] = useState("");
+
+  const listData = useSelector(ApiSelectors.getData);
 
   useEffect(() => {
     getCurrentDate();
@@ -91,8 +98,10 @@ const OrganizationRegistrationScreen = () => {
   };
 
   const registerPressHandler = () => {
-    let emailValidator = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    let PostedData = api.post(ApiConstant.postSignUpOrg);
+    console.log(PostedData);
 
+    let emailValidator = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
     let passwordValidator =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!.,\\@#\$%\^&\*])(?=.{8,})/;
 
@@ -117,6 +126,38 @@ const OrganizationRegistrationScreen = () => {
     } else {
       let token = Math.random().toString(36).slice(2, 8);
     }
+  };
+
+  let sendDataFormat: {
+    organization_Name: organizationName,
+    organization_Email: organizationEmail,
+    organization_Password: password,
+    organization_EventName: hackName,
+    organization_EventDate: hackDate,
+    organization_EventKey: "Code12345",
+    organization_PhoneNo: "9624063630",
+    organization_TelNo: "02619876523",
+    team_Size: teamSize,
+    is_Exist: true,
+  };
+
+  const sendData = (sendDataFormat) => {
+    var formData = new FormData();
+    formData.append(sendDataFormat);
+
+    var requestOption = {
+      method: "POST",
+      body: formData,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://hacksync.azurewebsites.net/api/Organization/signup",
+      requestOption
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .then((error) => console.log("error", error));
   };
 
   return (
@@ -165,10 +206,7 @@ const OrganizationRegistrationScreen = () => {
         <FieldContainer nameField="Password" changeText={passwordChange} />
         <FieldContainer nameField="Venue" changeText={venueChange} />
       </ScrollView>
-      <TouchableOpacity
-        style={styles.buttonStyle}
-        onPress={registerPressHandler}
-      >
+      <TouchableOpacity style={styles.buttonStyle} onPress={sendData}>
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
