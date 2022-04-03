@@ -1,39 +1,31 @@
 import { StyleSheet } from "react-native";
+import { horizontalScale, moderateScale, verticalScale } from "../../../themes";
 import Colors from "../../../themes/Colors";
 
 export const styles = StyleSheet.create({
   notificationContainer: {
     flex: 1,
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: Colors.grey,
-    // margin: 10,
+    marginTop: verticalScale(30),
   },
   notification: {
     flexDirection: "row",
-    // alignItems: "center",
-    // justifyContent: "center",
-    // margin: 10,
-    // borderWidth: 1,
+    paddingHorizontal: horizontalScale(20),
   },
-  imageContainer: {
-    //borderWidth: 1,
-  },
+  imageContainer: {},
   imageStyle: {
-    width: 60,
-    height: 60,
-    //borderRadius: 50,
+    width: moderateScale(55),
+    height: moderateScale(55),
+    tintColor: Colors.borderColorGrey,
   },
   textContainer: {
     flex: 1,
-    // justifyContent: "space-between",
     paddingLeft: 20,
     height: 100,
-    //borderWidth: 1,
   },
   text: {
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: moderateScale(18),
+    marginBottom: verticalScale(2),
     color: Colors.navyBlue,
   },
   description: {

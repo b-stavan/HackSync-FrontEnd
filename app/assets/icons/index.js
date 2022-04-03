@@ -9,6 +9,9 @@ const icons = {
   logOut: require("./logOut.png"),
   lockIcon: require("./lock.png"),
   user: require("./user.png"),
+  lunch: require("./lunch.png"),
+  refreshments: require("./refreshments.png"),
+  dinner: require("./dinner.png"),
 };
 
 export default icons;
