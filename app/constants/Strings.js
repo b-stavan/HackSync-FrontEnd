@@ -5,7 +5,7 @@ const Strings = {
   emailText: "Email ID:",
   passwordText: "Password",
   emailPlaceholder: "User@123",
-  loginTextLine: "Login to hackathon world",
+  loginTextLine: "Welcome hackers",
   google: "Google",
   forgotPassword: "Forgot your password?",
   touchME: " Touch me",

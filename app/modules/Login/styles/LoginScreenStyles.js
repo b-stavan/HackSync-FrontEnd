@@ -9,7 +9,7 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.lightBlue,
+    backgroundColor: Colors.white,
   },
   topSection: {
     justifyContent: "center",
@@ -21,14 +21,15 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(100),
   },
   loginTextLine: {
-    fontSize: moderateScale(20),
-    marginTop: verticalScale(20),
-    fontWeight: "600",
+    fontSize: moderateScale(25),
+    marginTop: verticalScale(60),
+    fontWeight: "800",
+    color: Colors.navyBlue,
   },
   textInputSection: {
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: verticalScale(50),
+    marginTop: verticalScale(20),
   },
   inputFieldWrapper: {
     flexDirection: "row",
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: verticalScale(50),
     width: horizontalScale(300),
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.lightGrey,
     padding: moderateScale(8),
   },
   keyText: {
@@ -45,14 +46,8 @@ const styles = StyleSheet.create({
   },
   textInputField: {
     fontSize: moderateScale(20),
-    marginLeft: horizontalScale(8),
+    marginLeft: horizontalScale(10),
     height: verticalScale(100),
-  },
-  textInputFieldLengthForEmail: {
-    width: horizontalScale(200),
-  },
-  textInputFieldLengthForPassword: {
-    width: horizontalScale(150),
   },
   bottomButtonsContainer: {
     flexDirection: "row",
@@ -63,7 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.navyBlue,
     height: verticalScale(50),
     width: moderateScale(300),
-    borderRadius: moderateScale(5),
+    borderRadius: moderateScale(10),
     justifyContent: "center",
     alignItems: "center",
   },
@@ -80,10 +75,12 @@ const styles = StyleSheet.create({
   },
   forgotPassword: {
     fontSize: moderateScale(20),
+    color: Colors.textColor,
   },
   touchME: {
     fontSize: moderateScale(20),
-    color: "red",
+    color: Colors.navyBlue,
+    fontWeight: "bold",
   },
   eyeIcon: {
     height: moderateScale(25),
