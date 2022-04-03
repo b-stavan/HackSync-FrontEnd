@@ -9,17 +9,27 @@ import {
   Image,
   TextInput,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import { dummyDataForTeamLead, Strings } from "../../constants";
+import { useDispatch, useSelector } from "react-redux";
+import Actions, { ApiSelectors } from "../../redux/apiRedux";
 import styles from "./HomeScreenStyles";
 import TeamLeadCard from "../../components/TeamLeadCard";
 import images from "../../assets/images";
+import ApiConstant from "../../constants/ApiConstant";
 
 const HomeScreen = () => {
+  const dispatch = useDispatch();
   const [displayModal, setDisplayModal] = useState(false);
   const [problemStatement, setProblemStatement] = useState("");
   const [teamName, setTeamName] = useState("");
+
+  const listData = useSelector(ApiSelectors.getData);
+  console.log(listData);
+  useEffect(() => {
+    dispatch(Actions.fetchApi(ApiConstant.baseUrl));
+  }, []);
 
   const openRequestToTLModal = () => {
     setDisplayModal(!displayModal);
