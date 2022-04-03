@@ -15,7 +15,7 @@ import { Colors, moderateScale } from "../themes";
 const Tab = createBottomTabNavigator();
 
 const TabRoutes = ({ navigation }) => {
-  const typeOfUser = "TL";
+  const typeOfUser = "TM";
   let renderComp, renderCompString;
   if (typeOfUser === "TM") {
     renderComp = HomeScreen;
