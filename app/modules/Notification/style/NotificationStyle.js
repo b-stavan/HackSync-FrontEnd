@@ -1,6 +1,5 @@
 import { StyleSheet} from 'react-native'
 import Colors from '../../../themes/Colors'
-import { horizontalScale } from '../../../themes/Metrices'
 
 export const styles = StyleSheet.create({
     notificationContainer: {
@@ -15,19 +14,22 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         margin: 10,
+        //borderWidth:1,
     },
     imageContainer:{
         //borderWidth: 1,
     },
     imageStyle: {
-        width: 50,
-        height: 50,
+        width: 60,
+        height: 60,
         //borderRadius: 50,
     },
     textContainer: {
         flex:1,
-        justifyContent: 'center',
-        paddingHorizontal: 10,
+        justifyContent: 'space-between',
+        paddingLeft: 20,
+        height: 100,
+        //borderWidth: 1,
     },
     text: {
         fontWeight: 'bold',

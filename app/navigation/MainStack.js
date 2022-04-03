@@ -1,6 +1,5 @@
 import React from "react";
 import navigationStrings from "../constants/navigationStrings";
-import IntroScreen from "../modules/IntroScreen/IntroScreen";
 import TabRoutes from "./TabRoutes";
 
 const MainStack = (Stack) => {
