@@ -16,8 +16,6 @@ import navigationStrings from "../../constants/navigationStrings";
 import styles from "./styles/LoginScreenStyles";
 
 const LoginScreen = ({ navigation }) => {
-  //useEffect(() => {}, []);
-
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
@@ -25,10 +23,6 @@ const LoginScreen = ({ navigation }) => {
   const handleForgotPassword = () => {};
 
   const inputValidator = () => {
-    // make api call
-    // if userId and password matches
-    // get type of user TM, TL, Org
-
     if (/^\s*$/.test(emailId) || /^\s*$/.test(password)) {
       Alert.alert("Email or Password cannot be empty space");
     } else {
@@ -55,7 +49,6 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <View style={styles.textInputSection}>
             <View style={styles.inputFieldWrapper}>
-              {/* <Text style={styles.keyText}>{Strings.emailText}</Text> */}
               <TextInput
                 style={[
                   styles.textInputField,
@@ -69,7 +62,6 @@ const LoginScreen = ({ navigation }) => {
               />
             </View>
             <View style={styles.inputFieldWrapper}>
-              {/* <Text style={styles.keyText}>{Strings.passwordText}</Text> */}
               <TextInput
                 style={[
                   styles.textInputField,
@@ -94,9 +86,6 @@ const LoginScreen = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.bottomButtonsContainer}>
-            {/* <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>{Strings.google}</Text>
-        </TouchableOpacity> */}
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
               <Text style={styles.buttonText}>{Strings.loginTitle}</Text>
             </TouchableOpacity>

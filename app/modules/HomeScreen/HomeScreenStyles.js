@@ -58,19 +58,27 @@ const styles = StyleSheet.create({
   },
   modalParentContainer: {
     flex: 1,
-    backgroundColor: Colors.white,
+
+    // backgroundColor: Colors.white,
   },
   logoImage: {
     height: verticalScale(150),
     width: horizontalScale(150),
     borderRadius: 1000,
+    borderWidth: 3,
+    borderColor: Colors.white,
     // marginTop: verticalScale(50),
+  },
+  borderWrapper: {
+    borderWidth: 3,
+    borderColor: Colors.navyBlue,
+    borderRadius: 1000,
   },
   teamNameInputField: {
     backgroundColor: Colors.white,
     borderWidth: 1,
-    height: verticalScale(30),
-    width: horizontalScale(200),
+    height: verticalScale(40),
+    width: "100%",
     padding: 5,
     borderRadius: moderateScale(10),
     marginTop: verticalScale(10),
@@ -79,15 +87,24 @@ const styles = StyleSheet.create({
   problemStatementInputField: {
     backgroundColor: Colors.white,
     borderWidth: 1,
-    height: verticalScale(100),
-    width: horizontalScale(200),
+    height: verticalScale(220),
+    width: "100%",
     padding: 5,
     borderRadius: moderateScale(10),
     marginTop: verticalScale(10),
     color: Colors.white,
   },
   modalDetailsContainer: {
+    // backgroundColor: "red",
+    width: "80%",
+    justifyContent: "center",
+
     // flex: 1,
+  },
+  buttonWrapper: {
+    flexDirection: "row-reverse",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
   modalText: {
     color: "black",
@@ -95,8 +112,9 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(15),
   },
   modalButton: {
-    height: verticalScale(30),
-    margin: verticalScale(15),
+    height: verticalScale(40),
+    marginTop: verticalScale(20),
+    width: "47%",
     borderRadius: moderateScale(10),
     justifyContent: "center",
     alignItems: "center",

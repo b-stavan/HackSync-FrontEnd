@@ -1,43 +1,35 @@
-import { StyleSheet} from 'react-native'
-import Colors from '../../../themes/Colors'
+import { StyleSheet } from "react-native";
+import { horizontalScale, moderateScale, verticalScale } from "../../../themes";
+import Colors from "../../../themes/Colors";
 
 export const styles = StyleSheet.create({
-    notificationContainer: {
-        flex:1,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: Colors.grey,
-        margin: 10,
-    },
-    notification: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 10,
-        //borderWidth:1,
-    },
-    imageContainer:{
-        //borderWidth: 1,
-    },
-    imageStyle: {
-        width: 60,
-        height: 60,
-        //borderRadius: 50,
-    },
-    textContainer: {
-        flex:1,
-        justifyContent: 'space-between',
-        paddingLeft: 20,
-        height: 100,
-        //borderWidth: 1,
-    },
-    text: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: Colors.black,
-    },
-    description: {
-        textAlign: 'justify',
-        color: Colors.black,
-    }
-})
+  notificationContainer: {
+    flex: 1,
+    marginTop: verticalScale(30),
+  },
+  notification: {
+    flexDirection: "row",
+    paddingHorizontal: horizontalScale(20),
+  },
+  imageContainer: {},
+  imageStyle: {
+    width: moderateScale(55),
+    height: moderateScale(55),
+    tintColor: Colors.borderColorGrey,
+  },
+  textContainer: {
+    flex: 1,
+    paddingLeft: 20,
+    height: 100,
+  },
+  text: {
+    fontWeight: "bold",
+    fontSize: moderateScale(18),
+    marginBottom: verticalScale(2),
+    color: Colors.navyBlue,
+  },
+  description: {
+    textAlign: "justify",
+    color: Colors.textColor,
+  },
+});
