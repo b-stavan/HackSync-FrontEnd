@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     height: verticalScale(150),
     width: horizontalScale(150),
     borderRadius: 1000,
-    marginTop: verticalScale(50),
+    // marginTop: verticalScale(50),
   },
   teamNameInputField: {
     backgroundColor: Colors.white,

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {Image} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -5,8 +6,11 @@ import navigationStrings from '../constants/navigationStrings';
 import {HomeScreen, Notification, EditProfile} from '../modules/index'
 import icons from '../assets/icons'
 import { Colors } from '../themes';
+
 const Tab = createBottomTabNavigator();
+
 const TabRoutes = () => {
+
     return (
         <Tab.Navigator screenOptions={{headerShown:false,tabBarShowLabel: false,}}>
           <Tab.Screen
@@ -45,4 +49,5 @@ const TabRoutes = () => {
         </Tab.Navigator>
       );
 }
+
 export default TabRoutes;

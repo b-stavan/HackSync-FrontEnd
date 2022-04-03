@@ -76,7 +76,7 @@ const HomeScreen = () => {
           <ImageBackground
             source={images.background}
             resizeMode="stretch"
-            imageStyle={{ opacity: 0.75 }}
+            imageStyle={{ opacity: 0.25 }}
             style={styles.modalContainer}
           >
             <Image
