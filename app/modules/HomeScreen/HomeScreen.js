@@ -1,24 +1,26 @@
+import React, { useEffect, useState } from "react";
 import {
-  View,
-  Text,
   FlatList,
-  ScrollView,
-  TouchableOpacity,
+  Image,
   ImageBackground,
   Modal,
-  Image,
+  ScrollView,
+  Text,
   TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import React, { useState, useEffect } from "react";
-import Header from "../../components/Header";
-import { dummyDataForTeamLead, Strings } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
+import Header from "../../components/Header";
+import TeamLeadCard from "../../components/TeamLeadCard";
+import { dummyDataForTeamLead, Strings } from "../../constants";
+import ApiConstant from "../../constants/ApiConstant";
 import Actions, { ApiSelectors } from "../../redux/apiRedux";
 import styles from "./HomeScreenStyles";
-import TeamLeadCard from "../../components/TeamLeadCard";
 import images from "../../assets/images";
-import ApiConstant from "../../constants/ApiConstant";
 import { Colors, horizontalScale } from "../../themes";
+
+
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const HomeScreen = () => {
   const [teamName, setTeamName] = useState("");
 
   const listData = useSelector(ApiSelectors.getData);
-  console.log(listData);
+  // console.log(listData);
   useEffect(() => {
     dispatch(Actions.fetchApi(ApiConstant.baseUrl));
   }, []);
@@ -35,8 +37,8 @@ const HomeScreen = () => {
   const openRequestToTLModal = () => {
     setDisplayModal(!displayModal);
   };
-  console.log(teamName);
-  console.log(problemStatement);
+  // console.log(teamName);
+  // console.log(problemStatement);
   return (
     <ImageBackground
       source={images.background}

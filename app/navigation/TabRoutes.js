@@ -1,27 +1,49 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Image } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import navigationStrings from "../constants/navigationStrings";
-import { HomeScreen, Notification, EditProfile } from "../modules/index";
 import icons from "../assets/icons";
-import { Colors } from "../themes";
+import navigationStrings from "../constants/navigationStrings";
+import {
+  EditProfile,
+  HomeScreen,
+  HomeScreenOrg,
+  HomeScreenTeamLeader,
+  Notification,
+} from "../modules/index";
+import { Colors, moderateScale } from "../themes";
 
 const Tab = createBottomTabNavigator();
 
-const TabRoutes = () => {
+const TabRoutes = ({ navigation }) => {
+  const typeOfUser = "TM";
+  let renderComp, renderCompString;
+  if (typeOfUser === "TM") {
+    renderComp = HomeScreen;
+    renderCompString = "HomeScreen";
+  }
+  if (typeOfUser === "TL") {
+    renderComp = HomeScreenTeamLeader;
+    renderCompString = "HomeScreenTeamLeader";
+  }
+  if (typeOfUser === "Org") {
+    renderComp = HomeScreenOrg;
+    renderCompString = "HomeScreenOrg";
+  }
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+    >
       <Tab.Screen
-        name={navigationStrings.HOME_SCREEN}
-        component={HomeScreen}
+        name={renderCompString}
+        component={renderComp}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
               <Image
                 style={{
                   tintColor: focused ? Colors.navyBlue : Colors.grey,
-                  width: 40,
-                  height: 40,
+                  width: moderateScale(30),
+                  height: moderateScale(30),
                 }}
                 source={icons.home}
               />
@@ -38,8 +60,8 @@ const TabRoutes = () => {
               <Image
                 style={{
                   tintColor: focused ? Colors.navyBlue : Colors.grey,
-                  width: 40,
-                  height: 40,
+                  width: moderateScale(35),
+                  height: moderateScale(35),
                 }}
                 source={icons.notification}
               />
@@ -56,8 +78,8 @@ const TabRoutes = () => {
               <Image
                 style={{
                   tintColor: focused ? Colors.navyBlue : Colors.grey,
-                  width: 40,
-                  height: 40,
+                  width: moderateScale(35),
+                  height: moderateScale(35),
                 }}
                 source={icons.edit}
               />
