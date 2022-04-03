@@ -64,14 +64,16 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontWeight: "500",
+    fontWeight: "600",
     fontSize: moderateScale(20),
   },
   forgotPasswordSection: {
     flexDirection: "row",
-    marginTop: verticalScale(100),
+    // marginTop: verticalScale(100),
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-end",
+    flex: 1,
+    paddingBottom: verticalScale(20),
   },
   forgotPassword: {
     fontSize: moderateScale(20),

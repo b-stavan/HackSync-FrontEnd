@@ -70,7 +70,6 @@ const LoginScreen = ({ navigation }) => {
               />
             </View>
             <View style={styles.inputFieldWrapper}>
-              {/* <Text style={styles.keyText}>{Strings.passwordText}</Text> */}
               <TextInput
                 style={[
                   styles.textInputField,
