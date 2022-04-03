@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import {
+  Alert,
   Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  Alert,
 } from "react-native";
 import images from "../../assets/images";
 import { Strings } from "../../constants";
 import navigationStrings from "../../constants/navigationStrings";
-import TabRoutes from "../../navigation/TabRoutes";
 import styles from "./styles/LoginScreenStyles";
 
 const LoginScreen = ({ navigation }) => {
