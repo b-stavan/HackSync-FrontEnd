@@ -31,8 +31,6 @@
 			<key>hacksync.com</key>
 			<dict>
 				<key>NSAllowArbitraryLoads</key>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-      <true/>
 				<true/>
 			</dict>
 		</dict>

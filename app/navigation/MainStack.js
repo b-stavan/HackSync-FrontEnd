@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import navigationStrings from "../constants/navigationStrings";
+import AuthStack from "./AuthStack";
 import TabRoutes from "./TabRoutes";
-import LoginScreen from "../modules/Login/LoginScreen";
 const MainStack = (Stack) => {
   return (
     <>
-      <Stack.Screen
-        name={navigationStrings.LOGIN_SCREEN}
-        component={LoginScreen}
-      />     
-      <Stack.Screen name={navigationStrings.TABS} component={TabRoutes} />
+      <Stack.Screen name={navigationStrings.AUTH_STACK} component={AuthStack} />
+      {true && (
+        <Stack.Screen name={navigationStrings.TABS} component={TabRoutes} />
+      )}
     </>
   );
 };

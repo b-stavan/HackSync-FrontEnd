@@ -1,15 +1,16 @@
 import React from "react";
 import {
-  View,
-  Text,
-  ImageBackground,
   Image,
+  ImageBackground,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
 import images from "../../assets/images";
+import navigationStrings from "../../constants/navigationStrings";
 import styles from "./Style/LoginScreenStyle";
 
-const LoginScreen = () => {
+const StartScreen = ({ navigation }) => {
   return (
     <ImageBackground
       source={images.background}
@@ -26,14 +27,16 @@ const LoginScreen = () => {
         <TouchableOpacity
           style={styles.buttonStyle}
           activeOpacity={0.7}
-          onPress={() => console.log("create Clicked")}
+          onPress={() =>
+            navigation.navigate(navigationStrings.ORG_REGISTRATION)
+          }
         >
           <Text style={styles.buttonText}>Create Hackathon</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonStyle}
           activeOpacity={0.7}
-          onPress={() => console.log("join Clicked")}
+          onPress={() => navigation.navigate(navigationStrings.JOIN_STACK)}
         >
           <Text style={styles.buttonText}>Join Hackathon</Text>
         </TouchableOpacity>
@@ -42,7 +45,7 @@ const LoginScreen = () => {
           <TouchableOpacity
             style={styles.loginButton}
             activeOpacity={0.7}
-            onPress={() => console.log("LoginClicked")}
+            onPress={() => navigation.navigate(navigationStrings.LOGIN_SCREEN)}
           >
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
@@ -52,4 +55,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default StartScreen;
