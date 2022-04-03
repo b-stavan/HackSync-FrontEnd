@@ -3,12 +3,18 @@ import React from "react";
 import { Image } from "react-native";
 import icons from "../assets/icons";
 import navigationStrings from "../constants/navigationStrings";
-import { EditProfile, HomeScreen, Notification } from "../modules/index";
+import {
+  EditProfile,
+  HomeScreen,
+  HomeScreenOrg,
+  HomeScreenTeamLeader,
+  Notification,
+} from "../modules/index";
 import { Colors, moderateScale } from "../themes";
 
 const Tab = createBottomTabNavigator();
 
-const TabRoutes = ({ navigation }) => {
+const TabRoutes = () => {
   const typeOfUser = "TL";
   let renderComp, renderCompString;
   if (typeOfUser === "TM") {
@@ -23,6 +29,7 @@ const TabRoutes = ({ navigation }) => {
     renderComp = HomeScreenOrg;
     renderCompString = "HomeScreenOrg";
   }
+
   return (
     <Tab.Navigator
       screenOptions={{ headerShown: false, tabBarShowLabel: false }}
